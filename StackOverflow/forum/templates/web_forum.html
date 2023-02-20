@@ -1,0 +1,25 @@
+<html lang="en">
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Питання:</title>
+</head>
+<body>
+    <div class = 'web'>
+        <a href="create_question/"><h1>Створити питання</h1></a>
+        <hr>
+        {% for question in questions %}
+            <a href="question/{{ question.pk }}"><h2>{{ question.title }}</h2></a>
+            <p>{{ question.text }}</p>
+            <h5>Автор:{{ question.author }}</h5>
+            <hr>
+        {% endfor %}
+
+
+    </div> 
+</body>
+</html>
